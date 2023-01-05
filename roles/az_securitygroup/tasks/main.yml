@@ -1,0 +1,16 @@
+---
+- name: Network Security group "{{ item.NetworkSecurityGroups }}" Rule "{{ item.SecurityRulesName }}" modify
+  azure_rm_securitygroup:
+    resource_group: "{{ item.ResourceGroup }}"
+    name : "{{ item.NetworkSecurityGroups }}"
+    rules:
+      - name: "{{ item.SecurityRulesName }}"
+        access: "{{ item.Access }}"
+        destination_port_range: "{{ item.DestinationPortRange }}"
+        protocol: "{{ item.Protocol }}"
+        source_address_prefix: "{{ item.SourceAddressPrefix }}"
+        priority: "{{ item.Priority }}"
+        direction: "{{ item.Direction }}"
+        description: "{{ item.description }}"
+        source_port_range: "{{ item.SourcePortRange }}"
+        destination_address_prefix: "{{ item.DestinationAddressPrefix }}"

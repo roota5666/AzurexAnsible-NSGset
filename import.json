@@ -1,0 +1,60 @@
+{
+  "securityRules": [
+    {
+      "ResourceGroup": "example",
+      "NetworkSecurityGroups": "example-nsg_test1",
+      "SecurityRulesName": "AllowAzureStorageInbound",
+      "Access": "Allow",
+      "Protocol": "*",
+      "Direction": "Inbound",
+      "Priority": "3001",
+      "SourceAddressPrefix": "Storage",
+      "SourcePortRange": "*",
+      "DestinationAddressPrefix": "*",
+      "DestinationPortRange": "25",
+      "description": "Storageからのアクセス許可"
+    },
+    {
+        "ResourceGroup": "example",
+        "NetworkSecurityGroups": "example-nsg_test1",
+        "SecurityRulesName": "AllowAzureLoadBalancerInbound",
+        "Access": "Allow",
+        "Protocol": "*",
+        "Direction": "Inbound",
+        "Priority": "3002",
+        "SourceAddressPrefix": "AzureLoadBalancer",
+        "SourcePortRange": "*",
+        "DestinationAddressPrefix": "*",
+        "DestinationPortRange": "80",
+        "description": "AzureLoadBalancerからのアクセス許可"
+      },
+    {
+      "ResourceGroup": "example",
+      "NetworkSecurityGroups": "example-nsg_test1",
+      "SecurityRulesName": "AllowClientInbound",
+      "Access": "Allow",
+      "Protocol": "Tcp",
+      "Direction": "Inbound",
+      "Priority": "555",
+      "SourceAddressPrefix": ["192.168.11.1","192.168.11.2","192.168.11.100"],
+      "SourcePortRange": "*",
+      "DestinationAddressPrefix": "192.168.1.1",
+      "DestinationPortRange": "25",
+      "description": "説明文"
+    },
+    {
+      "ResourceGroup": "example",
+      "NetworkSecurityGroups": "example-nsg_test2",
+      "SecurityRulesName": "AllowClientInbound",
+      "Access": "Allow",
+      "Protocol": "Tcp",
+      "Direction": "Inbound",
+      "Priority": "555",
+      "SourceAddressPrefix": ["192.168.11.1","192.168.11.2","192.168.11.100"],
+      "SourcePortRange": "*",
+      "DestinationAddressPrefix": "192.168.1.1",
+      "DestinationPortRange": "*",
+      "description": "test2"
+    }
+  ]
+}

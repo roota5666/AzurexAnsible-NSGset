@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars_files:
+    - "{{ importjson }}"
+
+  tasks:
+  - name: Azure Security Group
+    include_role:
+      name: az_securitygroup
+    with_items:
+      - "{{ securityRules }}" 
