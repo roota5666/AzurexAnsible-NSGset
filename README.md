@@ -2,10 +2,10 @@
 
 ## Features
 
-AzureのNSGをAnsibleで作成します。
+AzureのNSGをAnsibleで作成します。  
 このリポジトリは、Zennの記事 [Azure設定をAnsibleで実行する～NSG設定編～](https://zenn.dev/roota5666/articles/202212-06t-azurexansible-nsg)で使用するために作成したリポジトリです。
 
-## environment
+## Environment
 
 - azure-cli: 2.43.0
 - ansible: core 2.13.3
